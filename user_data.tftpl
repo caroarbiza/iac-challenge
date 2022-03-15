@@ -1,0 +1,10 @@
+#! /bin/bash
+### Install apache ###
+yum update -y
+yum install httpd -y
+systemctl start httpd.service
+
+
+### Set the webpage ###
+echo '<html><body>Hola soy Carolina y esto es mi IaC </body></html>' > index.html
+cp index.html /var/www/html/
